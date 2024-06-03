@@ -1,0 +1,10 @@
+
+%include "src/data/fat12_16.s"
+%include "src/common/fat12/cluster_to_sector.s"
+%include "src/common/fat12/get_disk_address_packet.s"
+%include "src/common/fat12/lba_to_chs.s"
+%include "src/common/fat12/load_file.s"
+%include "src/common/fat12/load_sector_ext.s"
+%include "src/common/fat12/load_sector.s"
+%include "src/common/fat12/prepare_fat.s"
+%include "src/common/fat12/search_file.s"
