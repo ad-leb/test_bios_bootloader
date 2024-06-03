@@ -1,5 +1,5 @@
 .SUFFIXES:
-.PHONY: default    boot_1 stage_2    runf runh    testf testh    tryf tryh 
+.PHONY: default    boot_1 stage_2 krnl    runf runh    testf testh    tryf tryh 
 
 
 # some DIR declarations
@@ -16,6 +16,7 @@ vpath %.bin		$(BINDIR)
 # |
 STG1::= stage_1.bin
 STG2::= stage_2.bin
+KRNL::= kernel.bin
 IMG::= floppy.img
 
 
@@ -30,7 +31,7 @@ EXP_S::= .s
 
 # PHONYs 
 # |
-default: down $(IMG) boot_1 boot_2
+default: down $(IMG) boot_1 boot_2 krnl
 down:
 	@rm -f $(BINDIR)/*
 	@rm -f $(IMG)
@@ -39,6 +40,8 @@ boot_1: $(STG1)
 	@dd if=$(BINDIR)/$(STG1) of=$(IMG) conv=notrunc status=none bs=b count=1
 boot_2: $(STG2)
 	@lfe push $(IMG) $(BINDIR)/$(STG2)
+krnl: $(KRNL)
+	@lfe push $(IMG) $(BINDIR)/$(KRNL)
 
 runf:																		# run in qemu as a floppy disk
 	@qemu-system-i386 -drive file=$(IMG),format=raw,if=floppy &

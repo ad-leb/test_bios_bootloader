@@ -22,7 +22,7 @@ main:
 
 	lea	di, load_sector_ext			; hard drive load routine
 	lea	si, load_sector				; floppy drive load routine
-	lea	ax, error_stage_1			; error handler
+	lea	ax, error_fat_short			; error handler
 	call	prepare_fat				; load tables, set variables
 
 
