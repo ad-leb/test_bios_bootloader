@@ -49,10 +49,10 @@ runh:																		# run in qemu as a hard disk
 	@qemu-system-i386 -drive file=$(IMG),format=raw,if=ide &
 testf: 																		# run in qemu as a floppy disk, debug in gdb
 	@qemu-system-i386 -drive file=$(IMG),format=raw,if=floppy -s -S &
-	@gdb -ex 'target remote localhost:1234'
+	@gdb
 testh:																		# run in qemu as a hard disk, debug in gdb
 	@qemu-system-i386 -drive file=$(IMG),format=raw,if=ide -s -S &
-	@gdb -ex 'target remote localhost:1234'
+	@gdb
 tryf: down default runf														# reset and runf
 tryh: down default runh														# reset and runh
 

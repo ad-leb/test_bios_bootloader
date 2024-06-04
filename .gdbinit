@@ -1,4 +1,6 @@
-b 0x7c00
+target remote localhost:1234
+b *0x7c00
+b *0x500
 display/i $pc
 display/x $di
 display/x $si
