@@ -9,7 +9,7 @@ stage_1:
 
 main:
 .preparing:
-	mov	byte [bsDriveNumber], dl		; BIOS put drive number in DL before exec
+	mov	byte [bs.DriveNumber], dl		; BIOS put drive number in DL before exec
 
 	xor	ax, ax					; |
 	mov	es, ax					; |

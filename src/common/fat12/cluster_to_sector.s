@@ -14,7 +14,7 @@ cluster_to_sector:
 	dec	ax
 
 	xor	dx, dx
-	mov	dl, byte [bpbSectorsPerCluster]
+	mov	dl, byte [SECTORS_PER_CLUSTER]
 	mov	si, dx
 	mul	si
 

@@ -6,9 +6,6 @@
 stage_2:
 
 .load_krnl:
-	mov	dl, byte [0x7c24]		; get bsDriveNumber from origin table. Real hack >:p
-	mov	byte [bsDriveNumber], dl
-
 	lea	di, load_sector_ext
 	lea	si, load_sector
 	lea	ax, error_fat_short

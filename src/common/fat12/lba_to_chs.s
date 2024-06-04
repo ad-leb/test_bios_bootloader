@@ -13,12 +13,12 @@ lba_to_chs:
 
 .sector:
 	xor	dx, dx
-	div	word [bpbSectorsPerTrack]
+	div	word [SECTORS_PER_TRACK]
 	mov	cl, dl
 	inc	cl
 .head:
 	xor	dx, dx
-	div	word [bpbHeadsPerCylinder]
+	div	word [HEADS_PER_CYLINDER]
 	shl	dx, 8
 .cylinder:
 	mov	ch, al

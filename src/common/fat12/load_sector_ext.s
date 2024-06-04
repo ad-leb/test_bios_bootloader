@@ -13,7 +13,7 @@ load_sector_ext:
 	int	0x13
 
 	call	get_disk_address_packet
-	mov	dl, byte [bsDriveNumber]
+	mov	dl, byte [DRIVE_NUMBER]
 	mov	ah, 0x42
 	int	0x13
 	jc	.error

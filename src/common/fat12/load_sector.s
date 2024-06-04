@@ -15,7 +15,7 @@ load_sector:
 	mov	al, cl
 	mov	bx, di
 	call	lba_to_chs
-	mov	dl, [bsDriveNumber]
+	mov	dl, [DRIVE_NUMBER]
 	mov	ah, 0x02
 	int	0x13
 	jc	.error

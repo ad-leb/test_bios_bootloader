@@ -10,7 +10,7 @@ search_file:
 	push	di
 
 	mov	di, [root_table]
-	mov	cx, [bpbRootEntries]
+	mov	cx, [ROOT_ENTRIES]
 
 .loop:
 	push	si
