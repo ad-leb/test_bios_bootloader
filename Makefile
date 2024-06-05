@@ -1,14 +1,15 @@
 .SUFFIXES:
-.PHONY: default    boot_1 stage_2 krnl    runf runh    testf testh    tryf tryh 
+.PHONY: default    boot_1 stage_2 krnl    runf runh    testf testh    tryf tryh    push
 
 
 # some DIR declarations
 # |
 SRCDIR::= src
 BINDIR::= bin
-
 vpath %.s		$(SRCDIR)
 vpath %.bin		$(BINDIR)
+
+
 
 
 
@@ -21,11 +22,6 @@ IMG::= floppy.img
 
 
 
-# some EXT declarations
-# |
-EXP_NON::= 
-EXP_BIN::= .bin
-EXP_S::= .s
 
 
 
