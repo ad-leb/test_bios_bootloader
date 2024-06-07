@@ -1,5 +1,6 @@
+%include	"src/include/general.inc"
 	bits	32
-	org	0x6000
+	org	ADDR_KERNEL
 
 
 kernel:

@@ -5,7 +5,7 @@
 load_gdt:
 	cli
 	pusha
-	lgdt	[toc]
+	lgdt	[gdt.pointer]
 	popa
 	sti
 .fin:

@@ -1,10 +1,14 @@
-	org	0x7c00
+%include 	"src/include/general.inc"
+	org	ADDR_STAGE_1
 	bits	16
+
+
 
 stage_1:
 	jmp	main
 .includes:
 %include "src/include/stage_1.inc"
+
 
 
 
@@ -32,10 +36,10 @@ main:
 
 .work:
 	lea	si, name_file				; stage_2 file's name
-	mov	di, 0x5000				; address where load this file
+	mov	di, 0x6000				; address where load this file
 	call	load_file
 
-	jmp	0x5000
+	jmp	ADDR_STAGE_2
 
 
 

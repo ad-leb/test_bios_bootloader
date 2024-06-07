@@ -28,7 +28,7 @@ gdt:
 		dw	0x0000					; base low
 		db	0 					; base middle
 		db	PRESENT | NON_SYS | EXEC | RW		; access
-		db 	GRAN_4K | SZ_32 | 0xf			; granularity
+		db 	GRAN_4K | LONG_MODE | 0xf		; granularity
 		db	0					; base high
 .data_descriptor:
 		dw	0xffff					; limit low
@@ -37,7 +37,8 @@ gdt:
 		db	PRESENT | NON_SYS | RW			; access
 		db 	GRAN_4K | SZ_32 | 0xf			; granularity
 		db	0					; base high
-.end:								; end of GDT
 
-toc:		dw	gdt.end - gdt - 1			; size of GDT (limit)
+
+
+.pointer:	dw	$ - gdt - 1				; size of GDT (limit)
 		dd	gdt					; base of GDT (base)
