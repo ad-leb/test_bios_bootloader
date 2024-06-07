@@ -5,7 +5,9 @@
 ; input:	esi -- string to print;
 ;###############################################################
 puts:
-	pusha
+	push	rdi
+	push	rsi
+	push	rax
 
 .print_loop:
 		lodsb
@@ -16,5 +18,7 @@ puts:
 .done:
 	clc
 .fin:
-	popa
+	pop	rax
+	pop	rsi
+	pop	rdi
 	ret

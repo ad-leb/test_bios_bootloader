@@ -36,12 +36,12 @@ prepare_fat:
 	mov	[data_offset], ax
 
 .load_fat:
-	mov	di, [fat_table]
+	mov	di, ADDR_FAT_TABLE_16
 	mov	si, [fat_offset]
 	mov	cl, [fat_size]
 	call	[ptr_load_sector]
 .load_root:
-	mov	di, [root_table]
+	mov	di, ADDR_ROOT_TABLE_16
 	mov	si, [root_offset]
 	mov	cl, [root_size]
 	call	[ptr_load_sector]

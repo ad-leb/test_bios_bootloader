@@ -4,7 +4,9 @@
 ;_______________________________________________________________
 ;###############################################################
 set_cursor:
-	pusha
+	push	rdi
+	push	rax
+	push	rdx
 
 .get_position:
 	call	get_text_position
@@ -31,5 +33,7 @@ set_cursor:
 
 .done:
 .fin:
-	popa
+	pop	rdx
+	pop	rax
+	pop	rdi
 	ret

@@ -3,18 +3,15 @@
 ;||  data  ||||||||  data  ||||||||  data  ||||||||  data  |||||
 ;|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ;|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-fat_offset:	dw	0x00		; |
-root_offset:	dw	0x00		; --> sector on disk
-data_offset:	dw	0x00		;/
+fat_offset:	dw	0x0000		; |
+root_offset:	dw	0x0000		; --> sector on disk
+data_offset:	dw	0x0000		;/
 
 fat_size:	db	0x00		; --> sectors on disk
 root_size:	db	0x00		;/
 
 
 
-
-fat_table:	dw	0xd000		; --> address in memory
-root_table:	dw	0xa000		;/
 
 ptr_load_sector:dw	0x0000		; --> choosing by drive_number routine
 ptr_fat_error:	dw	0x0000		; --> setting error handler

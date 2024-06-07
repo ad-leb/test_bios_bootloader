@@ -4,7 +4,7 @@
 ;_______________________________________________________________
 ; input:	di -- address in memory to load;
 ; 		si -- LBA addres of sector to load;
-;		cx -- count of sectors;
+;		cl -- count of sectors;
 ;###############################################################
 load_sector:
 	pusha

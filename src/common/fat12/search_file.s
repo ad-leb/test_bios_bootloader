@@ -9,7 +9,7 @@
 search_file:
 	push	di
 
-	mov	di, [root_table]
+	mov	di, ADDR_ROOT_TABLE_16
 	mov	cx, [ROOT_ENTRIES]
 
 .loop:

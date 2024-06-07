@@ -4,15 +4,17 @@
 ;_______________________________________________________________
 ;###############################################################
 clear_screen:
-	pusha
+	push	rdi
+	push	rax
+	push	rcx
 
 .prepare_values:
-	mov	edi, VIDEOMEM			; begin of video memory
+	mov	rdi, VIDEOMEM			; begin of video memory
 
-	mov	eax, COL			; |
-	mov	ecx, ROW			; |
-	mul	ecx				; --> get count of iteration
-	mov	ecx, eax			;/
+	mov	rax, COL			; |
+	mov	rcx, ROW			; |
+	mul	rcx				; --> get count of iteration
+	mov	rcx, rax			;/
 
 	mov	ah, byte [char_attr]		; --> get character (0) with it's attribute
 	xor	al, al				;/
@@ -22,5 +24,7 @@ clear_screen:
 
 .done:
 .fin:
-	popa
+	pop	rcx
+	pop	rax
+	pop	rdi
 	ret

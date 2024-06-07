@@ -6,18 +6,20 @@
 kernel:
 .preparing:
 	mov	ax, 0x0010
-	mov	ss, ax
 	mov	es, ax
 	mov	ds, ax
-	mov	rsp, 0x90000
+	mov	ss, ax
+	mov	rsp, 0xf0000
 
 
 .main:
 	mov	ah, 0x1f
-	mov	al, 0x41
-	mov	rcx, 0x600
-	mov	rdi, 0xb8000
-	rep 	stosw
+	mov	byte [char_attr], ah
+
+	call	clear_screen
+
+	lea	rsi, msg
+	call	puts
 
 
 
@@ -36,4 +38,4 @@ end_of_execution:
 	cli
 	hlt
 includes:
-;%include 	"src/include/kernel.inc"
+%include 	"src/include/kernel.inc"
