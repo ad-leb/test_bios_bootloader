@@ -13,6 +13,6 @@ display/x $rdx
 # Breakpoint to stage_1
 b *0x7c00
 # Breakpoint to stage_2
-b *0x500
+b *0x6000
 # Breakpoint to kernel
-b *0x1000
+b *0x7000
