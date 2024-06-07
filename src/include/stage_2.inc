@@ -1,3 +1,5 @@
+%define ADDR_KRNL		0x6000
+
 
 %include "src/data/stage_2.s"
 %include "src/common/error_handle/error_fat_short.s"

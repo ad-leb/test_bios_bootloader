@@ -1,5 +1,5 @@
 	bits	32
-	org	0x1000
+	org	0x6000
 
 
 kernel:
@@ -12,7 +12,7 @@ kernel:
 
 
 .main:
-	mov	ah, 0xe0
+	mov	ah, 0x1f
 	mov	byte [char_attr], ah
 	call	clear_screen
 

@@ -1,10 +1,14 @@
-	org	0x0500
+	org	0x5000
 	bits	16
 
-
-
 stage_2:
+	jmp	main
+.includes:
+%include 	"src/include/stage_2.inc"
 
+
+
+main:
 .load_krnl:
 	lea	di, load_sector_ext
 	lea	si, load_sector
@@ -12,7 +16,7 @@ stage_2:
 	call	prepare_fat
 
 	lea	si, name_krnl
-	mov	di, 0x1000
+	mov	di, ADDR_KRNL
 	call	load_file
 
 
@@ -27,7 +31,7 @@ stage_2:
 	or	al, 0x01
 	mov	cr0, eax
 .jump_32:
-	jmp	0x08:0x1000
+	jmp	0x08:ADDR_KRNL
 
 
 
@@ -40,6 +44,3 @@ stage_2:
 end_of_execution:
 	cli
 	hlt
-includes:
-	bits	16
-%include 	"src/include/stage_2.inc"

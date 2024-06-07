@@ -3,9 +3,10 @@
 
 stage_1:
 	jmp	main
-
 .includes:
 %include "src/include/stage_1.inc"
+
+
 
 main:
 .preparing:
@@ -31,10 +32,10 @@ main:
 
 .work:
 	lea	si, name_file				; stage_2 file's name
-	mov	di, 0x500				; address where load this file
+	mov	di, 0x5000				; address where load this file
 	call	load_file
 
-	jmp	0x500
+	jmp	0x5000
 
 
 
