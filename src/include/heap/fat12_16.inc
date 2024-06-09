@@ -19,3 +19,4 @@
 %include "src/common/fat12/load_sector.s"
 %include "src/common/fat12/prepare_fat.s"
 %include "src/common/fat12/search_file.s"
+%include "src/common/fat12/get_next_cluster.s"

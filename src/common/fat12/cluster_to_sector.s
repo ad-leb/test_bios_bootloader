@@ -7,22 +7,17 @@
 ;###############################################################
 cluster_to_sector:
 	push	ax
-	push	dx
 
-	mov	ax, si
-	dec	ax
-	dec	ax
+	dec	si
+	dec	si
 
-	xor	dx, dx
-	mov	dl, byte [SECTORS_PER_CLUSTER]
-	mov	si, dx
+	xor	ax, ax
+	mov	al, byte [SECTORS_PER_CLUSTER]
 	mul	si
-
 	add	ax, word [data_offset]
 
+.done:
 	mov	si, ax
-
 .fin:
-	pop	dx
 	pop	ax
 	ret

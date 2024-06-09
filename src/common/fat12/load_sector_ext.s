@@ -8,9 +8,6 @@
 ;###############################################################
 load_sector_ext:
 	pusha
-	
-	xor	ax, ax				; paranoic
-	int	0x13
 
 	call	get_disk_address_packet
 	mov	dl, byte [DRIVE_NUMBER]
@@ -24,4 +21,4 @@ load_sector_ext:
 	ret
 
 .error:
-	jmp	[ptr_fat_error]
+	jmp	[ptr_fat_error]					; ERROR_HANDLER + 0

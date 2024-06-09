@@ -5,6 +5,9 @@
 
 
 stage_2:
+.set_video_mode:
+	mov	ax, 0x0003
+	int	0x10
 .load_krnl:
 	lea	di, load_sector_ext
 	lea	si, load_sector

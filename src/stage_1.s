@@ -22,9 +22,6 @@ main:
 	mov	ss, ax					; --> registers set
 	mov	sp, 0x9000				;/
 
-	mov	ax, 0x0003				; --> clear screen + use graphic mode
-	int	0x10					;/
-
 	lea	di, load_sector_ext			; hard drive load routine
 	lea	si, load_sector				; floppy drive load routine
 	lea	ax, error_fat_short			; error handler
@@ -36,7 +33,7 @@ main:
 
 .work:
 	lea	si, name_file				; stage_2 file's name
-	mov	di, 0x6000				; address where load this file
+	mov	di, ADDR_STAGE_2			; address where load this file
 	call	load_file
 
 	jmp	ADDR_STAGE_2

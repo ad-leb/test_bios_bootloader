@@ -5,6 +5,4 @@
 ;|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 name_file:	db	"STAGE_2 BIN"
 
-msg_cant_load:	db	" Can't load ", 0
-msg_no_file:	db	" No file ", 0
-msg_unknown:	db	" :o ", 0
+msg_error:	db	"  can't load", 0x0a, 0x0a, 0x0d, 0

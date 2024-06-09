@@ -33,7 +33,7 @@ search_file:
 .not_found:
 	mov	di, [ptr_fat_error]
 	add	di, 2
-	jmp	di
+	jmp	di							; --> ERROR_HANDLER + 2
 .found:
 	add	di, 0x001a
 	mov	si, word [di]

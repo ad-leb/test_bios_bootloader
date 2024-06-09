@@ -34,4 +34,4 @@ load_sector:
 	ret
 
 .error:
-	jmp	[ptr_fat_error]
+	jmp	[ptr_fat_error]					; ERROR_HANDLER + 0
