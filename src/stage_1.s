@@ -19,8 +19,8 @@ main:
 	xor	ax, ax					; |
 	mov	es, ax					; |
 	mov	ds, ax					; |
-	mov	ss, ax					; --> registers set
-	mov	sp, 0x9000				;/
+	mov	ss, ax					; --> registers set (and stack)
+	mov	sp, 0xe000				;/
 
 	lea	di, load_sector_ext			; hard drive load routine
 	lea	si, load_sector				; floppy drive load routine

@@ -6,8 +6,8 @@
 %define HEADS_PER_CYLINDER		0x7c1a
 %define DRIVE_NUMBER			0x7c24
 
-%define ADDR_FAT_TABLE_16		0xd000
-%define ADDR_ROOT_TABLE_16		0xa000
+%define ADDR_FAT_TABLE_16		0xa000
+%define ADDR_ROOT_TABLE_16		0x8000
 
 
 %include "src/data/fat12_16.s"

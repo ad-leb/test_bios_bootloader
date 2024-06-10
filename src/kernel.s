@@ -4,8 +4,9 @@
 
 
 kernel:
+
 .preparing:
-	mov	ax, 0x0010
+	mov	ax, DESCRIPTOR_DATA
 	mov	es, ax
 	mov	ds, ax
 	mov	ss, ax
