@@ -18,7 +18,7 @@ vpath %.bin		$(BINDIR)
 STG1::= stage_1.bin
 STG2::= stage_2.bin
 KRNL::= kernel.bin
-IMG::= floppy.img
+IMG::= flash.img
 
 
 
